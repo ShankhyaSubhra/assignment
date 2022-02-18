@@ -11,7 +11,7 @@ const signup = async (req, res) => {
 
         res.status(201).send({ user, token })
     } catch (e) {
-        res.status(400).send(e)
+        res.status(400).send('User already exists')
     }
 }
 
@@ -23,7 +23,7 @@ const login = async (req, res) => {
 
         res.send({ user, token })
     } catch (e) {
-        res.status(400).send()
+        res.status(400).send('Cannot login. User does not exist')
     }
 }
 
