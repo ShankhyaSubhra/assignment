@@ -1,50 +1,15 @@
-<!doctype html>
-<html>
-
-<head>
-	<title>Payment Page · Razorpay</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<meta charset="utf-8">
-	<script>
-		var meta = {};
-      var options = {"amount":"50000","order_id":"order_IxQ7z5o2wskQST","name":"ABC Corp","description":"testing 123","prefill":{"name":"Shankhya Subhra Datta","email":"shankhya@example.com","contact":"9999999999"},"notes":{"address":"Razorpay Corporate Office"}};
-      var urls = {};
-      options.key = "rzp_test_g44a5akBbH1vln";
-	</script>
-</head>
-
-<body>
-	<style>
-		@keyframes lo {
-			to {
-				transform: rotate(360deg)
-			}
-		}
-
-		@-webkit-keyframes lo {
-			to {
-				-webkit-transform: rotate(360deg)
-			}
-		}
-
-		.loader {
-			height: 24px;
-			width: 24px;
-			border-radius: 50%;
-			display: inline-block;
-			animation: lo .8s infinite linear;
-			-webkit-animation: lo .8s infinite linear;
-			transition: 0.3s;
-			-webkit-transition: 0.3s;
-			opacity: 0;
-			border: 2px solid #3395FF;
-			border-top-color: transparent
-		}
-
-		.vis {
-			opacity: 1
-		}
-	</style>
-	<div class="loader vis" style="position:absolute;top:115px;left:50%;margin-left:-12px"></div>
-	<script src="https://cdn.razorpay.com/static/hosted/embedded-entry.js"></script>
+<form method="POST" action="https://api.razorpay.com/v1/checkout/embedded">
+    <input type="hidden" name="key_id" value="rzp_test_g44a5akBbH1vln">
+    <input type="hidden" name="amount" value=10000>
+    <input type="hidden" name="order_id" value="order_IzpmwdUXiVeaxy">
+    <input type="hidden" name="name" value="Acme Corp">
+    <input type="hidden" name="description" value="A Wild Sheep Chase">
+    <input type="hidden" name="image" value="https://cdn.razorpay.com/logos/BUVwvgaqVByGp2_large.png">
+    <input type="hidden" name="prefill[name]" value="Gaurav Kumar">
+    <input type="hidden" name="prefill[contact]" value="9123456780">
+    <input type="hidden" name="prefill[email]" value="gaurav.kumar@example.com">
+    <input type="hidden" name="notes[shipping address]" value="L-16, The Business Centre, 61 Wellfield Road, New Delhi - 110001">
+    <input type="hidden" name="callback_url" value="https://example.com/payment-callback">
+    <input type="hidden" name="cancel_url" value="https://example.com/payment-cancel">
+    <button>Submit</button>
+  </form>
