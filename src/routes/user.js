@@ -1,5 +1,6 @@
 // Importing packages
 const express = require('express')
+const auth = require('../middleware/auth')
 const userController = require('../controller/user')
 
 // Initializing express router
@@ -15,6 +16,9 @@ router.post('/users/signup', userController.signup)
 
 // Route for user login
 router.post('/users/login', userController.login)
+
+// Route to fetch user own profile
+router.get('/users/me', auth, userController.userInfo)
 
 // Exporting express router
 module.exports = router

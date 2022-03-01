@@ -27,8 +27,14 @@ const login = async (req, res) => {
     }
 }
 
+// Function to fetch user own profile
+const userInfo = async (req, res) => {
+    res.send(req.user)
+}
+
 // Expoting controller functions
 module.exports = {
     signup,
-    login
+    login,
+    userInfo
 }
