@@ -12,6 +12,9 @@ router.get('/', (req, res) => {
 })
 
 // Route for user signup
+router.post('/users/sendotp', userController.sendOtp)
+
+// Route for user signup
 router.post('/users/signup', userController.signup)
 
 // Route for user login

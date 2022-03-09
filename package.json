@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.26.0",
     "bcryptjs": "^2.4.3",
+    "crypto": "^1.0.1",
     "crypto-js": "^4.1.1",
     "env-cmd": "^10.1.0",
     "express": "^4.17.3",
@@ -20,6 +21,7 @@
     "mongoose": "^6.2.2",
     "nodemon": "^2.0.15",
     "razorpay": "^2.8.0",
+    "twilio": "^3.75.0",
     "validator": "^13.7.0"
   }
 }

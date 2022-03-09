@@ -33,6 +33,17 @@ const userSchema = new mongoose.Schema({
             }
         }
     },
+    phone: {
+        type: Number,
+        required: true,
+        // validate(value) {
+        //     if (/^\d{10}$/.test(value)) {
+        //         // value is ok, use it
+        //     } else {
+        //         throw new Error('Must be 10 digit phone number')
+        //     }
+        // }
+    },
     tokens: [{
         token: {
             type: String,
