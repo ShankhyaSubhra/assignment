@@ -8,19 +8,24 @@ const vendorsSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    latitude: {
-        type: String,
-        trim: true,
-        required: true,
-    },
-    longitude: {
-        type: String,
-        trim: true,
-        required: true,
+    location: {
+        type: {
+            type: 'String',
+            // default: 'Point',
+            enum: ['Point'],
+            required: true
+        },
+        coordinates: {
+            type: [Number],
+            required: true,
+        },
     }
 }, {
     timestamps: true
 })
+
+// 2dsphere index
+vendorsSchema.index({ "location": "2dsphere" })
 
 // Defining model
 const vendors = mongoose.model('Vendor', vendorsSchema)
